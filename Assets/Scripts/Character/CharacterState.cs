@@ -18,5 +18,6 @@ namespace Character
         public Transform BackCameraPoint { get; set; }
         public bool IsPositionChanging { get; set; }
         public CameraPositionType ChangingPositionToType { get; set; }
+        public SyncElement SyncData { get; set; }
     }
 }

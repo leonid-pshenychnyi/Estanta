@@ -5,64 +5,82 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using Character;
 using Models.Character;
 using Network.Services.Interfaces;
 using Newtonsoft.Json;
-using Unity.VisualScripting;
+using Shared;
 
 namespace Network.Services.Sync
 {
-    public class CharactersSyncService : ISyncable<SyncCharacter>
+    public class CharactersSyncService : ISyncabe
     {
-        public const int localPort = default; // TODO: change
-        public const string remoteAddress = default;
-        public const int remotePort = default;
+        static UdpClient sender = new();
+
+        public static List<SyncElement> Characters = new();
+
+        public static Guid SessionId = Guid.NewGuid();
+        public static void UpdateElement(SyncElement syncElement)
+        {
+            var character = Characters.FirstOrDefault(character => character.Id == syncElement.Id);
+            character.ElementData.Name = syncElement.ElementData.Name;
+            character.ElementData.Position = syncElement.ElementData.Position;
+            character.ElementData.Rotation = syncElement.ElementData.Rotation;
+            
+            SyncData(character);
+        }
         
-        UdpClient sender = new();
-        UdpClient receiver = new(localPort);
-
-        public List<SyncCharacter> Characters = new();
-
         public void Subscribe()
         {
-            Thread receiveThread = new Thread(ReceiveMessage);
-            receiveThread.Start();
+            var receiveCharactersThread = new Thread(() => SubscribeToChanges((int)Ports.UCharacters, Characters));
+            receiveCharactersThread.Start();
         }
 
-        public void UpdateElement(SyncCharacter syncCharacter)
+        public void RegisterNewSyncUser()
         {
-            var character = Characters.FirstOrDefault(character => character.Id == syncCharacter.Id);
-            character.Name = syncCharacter.Name;
-            character.Transform = syncCharacter.Transform;
-            character.Synced = false;
+            var data = Encoding.Unicode.GetBytes(SessionId.ToString());
+            sender.Send(data, data.Length, Constants.ServerIpAddress, (int)Ports.Users);
+        }
+
+        private static void SyncData(SyncElement updateElement)
+        {
+            var notifyElement = JsonConvert.SerializeObject(updateElement);
+            var data = Encoding.Unicode.GetBytes(notifyElement);
             
-            SyncData();
-        }
-
-        private void SyncData()
-        {
-            var notSyncedCharacters = Characters.Where(character => !character.Synced);
-            if (notSyncedCharacters.Any())
-            {
-                var message = JsonConvert.SerializeObject(notSyncedCharacters);
-                
-                byte[] data = Encoding.Unicode.GetBytes(message);
-                sender.Send(data, data.Length, remoteAddress, remotePort);
-            }
+            sender.Send(data, data.Length, Constants.ServerIpAddress, (int)Ports.Characters);
         }
         
-        private void ReceiveMessage()
+        private void SubscribeToChanges(int port, IReadOnlyCollection<SyncElement> list)
         {
-            IPEndPoint remoteIp = null;
-
+            var receiver = new UdpClient(port);
+            IPEndPoint? remoteIp = null;
             while (true)
             {
-                byte[] data = receiver.Receive(ref remoteIp);
-                string message = Encoding.Unicode.GetString(data);
-                var changedCharacters = JsonConvert.DeserializeObject<List<SyncCharacter>>(message);
+                var data = receiver.Receive(ref remoteIp);
+                var convertedData = Encoding.Unicode.GetString(data);
 
-                // TODO: Redraw characters
-                Characters = changedCharacters;
+                if (!string.IsNullOrEmpty(convertedData))
+                {
+                    var parsedMessage = JsonConvert.DeserializeObject<SyncElement>(convertedData);
+                    var character = list.FirstOrDefault(w => w.Id == parsedMessage.Id);
+                    if (character != null)
+                    {
+                        character.ElementData = parsedMessage.ElementData;
+                        
+                        character.GameObject.transform.position = parsedMessage.ElementData.VectorPosition;
+                        character.GameObject.transform.rotation = parsedMessage.ElementData.QuaternionRotation;
+                    }
+                    else
+                    {
+                        var newCharacter = new SyncElement
+                        {
+                            Id = parsedMessage.Id,
+                            ElementData = parsedMessage.ElementData
+                        };
+                        Characters.Add(newCharacter);
+                        Starter.SpawnPrefabByName(parsedMessage.ElementData.PrefabName, parsedMessage.ElementData.VectorPosition, parsedMessage.ElementData.QuaternionRotation);
+                    }
+                }
             }
         }
     }

@@ -1,4 +1,3 @@
-using System;
 using Network.Services.Sync;
 using UnityEngine;
 
@@ -12,7 +11,8 @@ namespace Network
 
         private void Start()
         {
-            
+            _charactersSyncService.RegisterNewSyncUser();
+            _charactersSyncService.Subscribe();
         }
     }
 }

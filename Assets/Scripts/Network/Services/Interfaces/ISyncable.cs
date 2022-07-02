@@ -1,8 +1,9 @@
+using Models.Character;
+
 namespace Network.Services.Interfaces
 {
-    public interface ISyncable<T>
+    public interface ISyncabe
     {
         void Subscribe();
-        void UpdateElement(T element);
     }
 }

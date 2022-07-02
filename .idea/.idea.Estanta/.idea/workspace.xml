@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ff4144d-9673-4ce0-ab23-365a1d82cf51" name="Changes" comment="" />
+    <list default="true" id="6ff4144d-9673-4ce0-ab23-365a1d82cf51" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shared.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shared/Constants.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shared/Constants.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Estanta/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Estanta/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Constants.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Constants.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Enums.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/Character/SyncCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Character/SyncElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/Character/SyncCharacter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Character/SyncElement.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/NetworkController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/NetworkController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Services/Interfaces/ISyncable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Services/Interfaces/ISyncable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Services/Sync/CharactersSyncService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Services/Sync/CharactersSyncService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +29,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Services/Camera/Interfaces/ICameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shared/Starter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@13.1.8/Editor/RendererFeatures/NewRendererFeatureDropdownItem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@13.1.8/ShaderLibrary/NormalReconstruction.hlsl" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_FontAssetCommon.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Graphs/GraphElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1720f652f31145af877fbb9e0d1ba65c284000/96/39c1e4ab/Socket.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1720f652f31145af877fbb9e0d1ba65c284000/eb/5dc35a5f/Dns.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/880832f2c4e2458090401bbb74a86b24a8a00/43/261b8707/JsonSerializerInternalWriter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/880832f2c4e2458090401bbb74a86b24a8a00/e6/7942176c/JsonSerializerInternalReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/890d6fe26e8c408ea64b353e791fafce46a800/e1/6c8796cf/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d8d38b92d94a4ff8a91e61d39c6d19cd15d000/b1/9f9f5dec/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d8d38b92d94a4ff8a91e61d39c6d19cd15d000/d8/6a74fa48/Object.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -78,15 +107,101 @@
       <workItem from="1656358717993" duration="650000" />
       <workItem from="1656450768806" duration="2106000" />
       <workItem from="1656539695508" duration="2390000" />
+      <workItem from="1656542814856" duration="142000" />
+      <workItem from="1656604061240" duration="180000" />
+      <workItem from="1656604623179" duration="7284000" />
+      <workItem from="1656709646653" duration="5902000" />
+      <workItem from="1656791977609" duration="7293000" />
+      <workItem from="1656800268023" duration="292000" />
     </task>
+    <task id="LOCAL-00001" summary="Init commit">
+      <created>1656542839790</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656542839790</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Network/NetworkController.cs</url>
+          <line>12</line>
+          <properties documentPath="C:\Projects\temp\Estanta\Assets\Scripts\Network\NetworkController.cs" initialLine="17" containingFunctionPresentation="method 'Start'">
+            <startOffsets>
+              <option value="389" />
+            </startOffsets>
+            <endOffsets>
+              <option value="390" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Network/Services/Sync/CharactersSyncService.cs</url>
+          <line>62</line>
+          <properties documentPath="C:\Projects\temp\Estanta\Assets\Scripts\Network\Services\Sync\CharactersSyncService.cs" initialLine="53" containingFunctionPresentation="method 'SubscribeToChanges'">
+            <startOffsets>
+              <option value="2196" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2197" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Network/Services/Sync/CharactersSyncService.cs</url>
+          <line>49</line>
+          <properties documentPath="C:\Projects\temp\Estanta\Assets\Scripts\Network\Services\Sync\CharactersSyncService.cs" initialLine="48" containingFunctionPresentation="method 'SyncData'">
+            <startOffsets>
+              <option value="1664" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1745" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Shared/Starter.cs</url>
+          <line>11</line>
+          <properties documentPath="C:\Projects\temp\Estanta\Assets\Scripts\Shared\Starter.cs" initialLine="11" containingFunctionPresentation="method 'Start'">
+            <startOffsets>
+              <option value="196" />
+            </startOffsets>
+            <endOffsets>
+              <option value="197" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
