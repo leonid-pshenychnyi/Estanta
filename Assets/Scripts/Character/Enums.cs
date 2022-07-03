@@ -9,17 +9,14 @@ namespace Character
 
     public enum Ports
     {
-        // Characters + 1
-        Characters = 732,
-        UCharacters = 733,
+        ServerCharacters = 732,
+        UserCharacters = 733,
     
-        // Environment + 1
-        Environment = 734,
-        UEnvironment = 735,
+        ServerEnvironment = 734,
+        UserEnvironment = 735,
     
-        // Npc + 1
-        Npc = 736,
-        UNpc = 737,
+        ServerNpc = 736,
+        UserNpc = 737,
     
         Users = 738
     }

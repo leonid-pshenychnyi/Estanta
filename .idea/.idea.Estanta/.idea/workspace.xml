@@ -5,21 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ff4144d-9673-4ce0-ab23-365a1d82cf51" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shared.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shared/Constants.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shared/Constants.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Network/CharacterSyncElement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Network/CharacterSyncElement.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Estanta/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Estanta/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Constants.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Constants.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Enums.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/Character/SyncCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Character/SyncElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/Character/SyncCharacter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Character/SyncElement.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Services/Camera/CameraService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Services/Camera/CameraService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/Character/SyncElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Network/SyncElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/Character/SyncElement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Network/SyncElement.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/NetworkController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/NetworkController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Services/Interfaces/ISyncable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Services/Interfaces/ISyncable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Services/Sync/CharactersSyncService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Services/Sync/CharactersSyncService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shared/Starter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shared/Starter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/BurstAotSettings_StandaloneWindows.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/BurstAotSettings_StandaloneWindows.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/CommonBurstAotSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/CommonBurstAotSettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +39,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/880832f2c4e2458090401bbb74a86b24a8a00/43/261b8707/JsonSerializerInternalWriter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/880832f2c4e2458090401bbb74a86b24a8a00/e6/7942176c/JsonSerializerInternalReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/890d6fe26e8c408ea64b353e791fafce46a800/e1/6c8796cf/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ccf9ff037b1542ac969d4d0a5c53015210fc00/b7/b7678a7b/LargeArrayBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d8d38b92d94a4ff8a91e61d39c6d19cd15d000/b1/9f9f5dec/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d8d38b92d94a4ff8a91e61d39c6d19cd15d000/d8/6a74fa48/Object.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -112,7 +113,10 @@
       <workItem from="1656604623179" duration="7284000" />
       <workItem from="1656709646653" duration="5902000" />
       <workItem from="1656791977609" duration="7293000" />
-      <workItem from="1656800268023" duration="292000" />
+      <workItem from="1656800268023" duration="387000" />
+      <workItem from="1656842582634" duration="1481000" />
+      <workItem from="1656867428164" duration="2775000" />
+      <workItem from="1656870304027" duration="3892000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1656542839790</created>
@@ -121,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656542839790</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added network sync">
+      <created>1656800645281</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656800645281</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,62 +155,30 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init commit" />
+    <MESSAGE value="Added network sync" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added network sync" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Network/NetworkController.cs</url>
-          <line>12</line>
-          <properties documentPath="C:\Projects\temp\Estanta\Assets\Scripts\Network\NetworkController.cs" initialLine="17" containingFunctionPresentation="method 'Start'">
-            <startOffsets>
-              <option value="389" />
-            </startOffsets>
-            <endOffsets>
-              <option value="390" />
-            </endOffsets>
-          </properties>
+          <line>11</line>
+          <properties documentPath="C:\Projects\temp\Estanta\Assets\Scripts\Network\NetworkController.cs" initialLine="17" containingFunctionPresentation="method 'Start'" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Network/Services/Sync/CharactersSyncService.cs</url>
-          <line>62</line>
-          <properties documentPath="C:\Projects\temp\Estanta\Assets\Scripts\Network\Services\Sync\CharactersSyncService.cs" initialLine="53" containingFunctionPresentation="method 'SubscribeToChanges'">
-            <startOffsets>
-              <option value="2196" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2197" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Network/Services/Sync/CharactersSyncService.cs</url>
-          <line>49</line>
-          <properties documentPath="C:\Projects\temp\Estanta\Assets\Scripts\Network\Services\Sync\CharactersSyncService.cs" initialLine="48" containingFunctionPresentation="method 'SyncData'">
-            <startOffsets>
-              <option value="1664" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1745" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Shared/Starter.cs</url>
-          <line>11</line>
-          <properties documentPath="C:\Projects\temp\Estanta\Assets\Scripts\Shared\Starter.cs" initialLine="11" containingFunctionPresentation="method 'Start'">
+          <line>24</line>
+          <properties documentPath="C:\Projects\Estanta\Assets\Scripts\Shared\Starter.cs" initialLine="26" containingFunctionPresentation="method 'GetPrefabByName'">
             <startOffsets>
-              <option value="196" />
+              <option value="754" />
             </startOffsets>
             <endOffsets>
-              <option value="197" />
+              <option value="755" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="9" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

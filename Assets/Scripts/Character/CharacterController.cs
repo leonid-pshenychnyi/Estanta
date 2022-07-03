@@ -16,34 +16,16 @@ namespace Character
         [SerializeField] Transform Character;
 
         private CameraService _cameraService;
+        private CharactersSyncService _charactersSyncService;
         
-        private CharacterState State = new();
+        private CharacterState CharacterState;
 
         private void Awake()
         {
-            State.Camera = Camera;
-            State.Rigidbody = GetComponent<Rigidbody>();
-            State.SyncData = new SyncElement
-            {
-                Id = CharactersSyncService.SessionId,
-                ElementData = new ElementData(Character.position, Character.rotation, "testoCharacter"),
-                GameObject = gameObject
-            };
-            CharactersSyncService.Characters.Add(State.SyncData);
-            CharactersSyncService.UpdateElement(State.SyncData);
+            CharacterState = new CharacterState(Camera, GetComponent<Rigidbody>(), HeadPoint);
 
-            State.Vizios = new List<Vizio>();
-            State.HeadCameraPoint = HeadPoint;
-            State.Vizios.Add(new Vizio()
-            {
-                Id = 1,
-                Transform = Camera.transform,
-                IsAlive = true,
-                IsMovable = true
-            });
-            State.SelectedVizio = State.Vizios.FirstOrDefault();
-
-            _cameraService = new CameraService(State);
+            _cameraService = new CameraService(CharacterState);
+            _charactersSyncService = new CharactersSyncService(CharacterState);
         }
 
         private void FixedUpdate()
@@ -56,8 +38,8 @@ namespace Character
             if (Input.GetKeyDown(KeyCode.O))
             {
                 Character.position = new Vector3(Character.position.x + 1, Character.position.y, Character.position.z);
-                State.SyncData.ElementData = new ElementData(Character.position, Character.rotation, "testoCharacter");
-                CharactersSyncService.UpdateElement(State.SyncData);
+                ////CharacterState.SyncData.ElementData = new ElementData(Character.position, Character.rotation, "testoCharacter");
+                ////CharactersSyncService.UpdateElement(CharacterState.SyncData);
             }
         }
     }

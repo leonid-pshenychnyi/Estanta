@@ -12,7 +12,7 @@ namespace Network
         private void Start()
         {
             _charactersSyncService.RegisterNewSyncUser();
-            _charactersSyncService.Subscribe();
+            _charactersSyncService.SubscribeToChangesFromServer();
         }
     }
 }

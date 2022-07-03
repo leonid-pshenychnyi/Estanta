@@ -4,6 +4,6 @@ namespace Network.Services.Interfaces
 {
     public interface ISyncabe
     {
-        void Subscribe();
+        void SubscribeToChangesFromServer();
     }
 }

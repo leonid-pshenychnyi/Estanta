@@ -1,7 +1,3 @@
-
-using System.Collections.Generic;
-using System.Linq;
-using UnityEditor;
 using UnityEngine;
 
 namespace Shared
@@ -27,22 +23,9 @@ namespace Shared
         
         private static GameObject GetPrefabByName(string name)
         {
-            string[] foldersToSearch = {"Assets/Prefabs"};
-            List<GameObject> allPrefabs = GetAssets<GameObject>(foldersToSearch, "t:prefab");
-
-            return allPrefabs.FirstOrDefault(w => w.name == name);
-        }
-     
-        private static List<T> GetAssets<T>(string[] _foldersToSearch, string _filter) where T : UnityEngine.Object
-        {
-            var guids = AssetDatabase.FindAssets(_filter, _foldersToSearch);
-            var a = new List<T>();
-            foreach (var t in guids)
-            {
-                var path = AssetDatabase.GUIDToAssetPath(t);
-                a.Add(AssetDatabase.LoadAssetAtPath<T>(path));
-            }
-            return a;
+            string folderToSearch = "Prefabs";
+            var t = (GameObject[])Resources.LoadAll("GameObjects");
+            return (GameObject)Resources.Load($"{folderToSearch}/{name}", typeof(GameObject));
         }
     }
 }

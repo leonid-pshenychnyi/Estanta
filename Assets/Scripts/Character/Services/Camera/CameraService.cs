@@ -28,15 +28,15 @@ namespace Character.Services.Camera
             if (positionType == CameraPositionType.Free)
             {
                 // TODO: Make camera be free
-                State.IsPositionChanging = false;
+                State.IsCameraPositionChanging = false;
                 return;
             }
 
-            if (vizio.IsMovable && (!State.IsPositionChanging || State.ChangingPositionToType != positionType))
+            if (vizio.IsMovable && (!State.IsCameraPositionChanging || State.ChangingCameraPositionToType != positionType))
             {
                 // TODO: Move Camera to transform from state
-                State.IsPositionChanging = true;
-                State.ChangingPositionToType = positionType;
+                State.IsCameraPositionChanging = true;
+                State.ChangingCameraPositionToType = positionType;
             }
         }
 
