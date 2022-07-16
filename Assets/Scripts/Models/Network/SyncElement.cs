@@ -13,14 +13,23 @@ namespace Models.Network
 
     public class SyncData
     {
-        protected SyncData(Vector3 position, Quaternion rotation, string prefabName)
+        public SyncData(Vector3 position, Quaternion rotation, string prefabName)
         {
-            Position = new CustomVector3();
-            Position.Adapt(position);
+            Position = new CustomVector3
+            {
+                x = position.x,
+                y = position.y,
+                z = position.z
+            };
 
-            Rotation = new CustomQuaternion();
-            Rotation.Adapt(rotation);
-            
+            Rotation = new CustomQuaternion
+            {
+                x = rotation.x,
+                y = rotation.y,
+                z = rotation.z,
+                w = rotation.w
+            };
+
             PrefabName = prefabName;
         }
         
@@ -28,6 +37,9 @@ namespace Models.Network
         public CustomVector3 Position { get; set; }
         public CustomQuaternion Rotation { get; set; }
         public string PrefabName { get; set; }
+
+        [JsonIgnore]
+        public GameObject GameObject { get; set; }
         
         // True transforms
         [JsonIgnore]

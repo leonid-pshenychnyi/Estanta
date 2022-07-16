@@ -1,4 +1,5 @@
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Shared
 {
@@ -6,26 +7,46 @@ namespace Shared
     {
         private void Start()
         {
-            SpawnPrefabByName("TestoCharacter");
+            SpawnPrefabByName("Character/TestoCharacter");
         }
 
+        /// <summary>
+        /// Spawn prefab on zero position
+        /// </summary>
+        /// <param name="prefabName"></param>
         public static void SpawnPrefabByName(string prefabName)
         {
             var characterPrefab = GetPrefabByName(prefabName);
-            Instantiate(characterPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            
+            // Testo
+            var randomYPos = Random.Range(0.0f, 20.0f);
+            
+            Instantiate(characterPrefab, new Vector3(0, randomYPos, 0), Quaternion.identity);
         }
         
-        public static void SpawnPrefabByName(string prefabName, Vector3 position, Quaternion rotation)
+        /// <summary>
+        /// Spawn prefab on specific position and rotation
+        /// </summary>
+        /// <param name="prefabName"></param>
+        /// <param name="position"></param>
+        /// <param name="rotation"></param>
+        public static GameObject SpawnPrefabByName(string prefabName, Vector3 position, Quaternion rotation)
         {
-            var characterPrefab = GetPrefabByName(prefabName);
-            Instantiate(characterPrefab, position, rotation);
+            var characterPrefabObject = GetPrefabByName(prefabName);
+            Instantiate(characterPrefabObject, position, rotation);
+
+            return characterPrefabObject;
         }
         
+        /// <summary>
+        /// Find prefab in 'Prefab' folder by name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         private static GameObject GetPrefabByName(string name)
         {
-            string folderToSearch = "Prefabs";
-            var t = (GameObject[])Resources.LoadAll("GameObjects");
-            return (GameObject)Resources.Load($"{folderToSearch}/{name}", typeof(GameObject));
+            var folderToSearch = "Prefabs";
+            return (GameObject)Resources.Load($"{folderToSearch}/{name}");
         }
     }
 }
